@@ -1,0 +1,12 @@
+d.intergratis.uno
+{ 
+  log {
+    output file /var/log/caddy/caddy.log
+  }
+  tls jjjjoseignacio@gmail.com
+  @websockets {
+    header Connection Upgrade
+    header Upgrade websocket
+  }
+  reverse_proxy @websockets v2ray://v2ray:500
+}
